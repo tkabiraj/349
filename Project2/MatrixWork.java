@@ -1,23 +1,32 @@
 import java.util.Scanner;
-
+import java.lang.Object;
+import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.io.*;
 public class MatrixWork {
 
-   public static void main(String[] args) {
-      int[][] A = { {1, 2, 3, 10},
-                    {4, 5, 6, 14} };
-      int[][] B = { {1, 2},
-                    {3, 4}, 
-                    {5, 6},
-                    {10, 14} }; 
-      int[][] C = matrixProduct(A, B);
-      Scanner in = new Scanner(System.in);
+   public static void main(String[] args) throws IOException{
+      Scanner scan = new Scanner(System.in);
       System.out.println("Input file name");
       String str = scan.nextLine();
-      File file = new File(str);
-
-      try {
-         int rows, cols;
-         
+      Path filePath = Paths.get(str);
+      Scanner scanner = new Scanner(filePath);
+      
+      int[][] A = new int[scanner.nextInt()][scanner.nextInt()];
+      for(int i = 0; i < A.length; i++) {
+         for(int j = 0; j < A[0].length; j++) {
+            A[i][j] = scanner.nextInt();
+         }
+      }
+      
+      int[][] B = new int[scanner.nextInt()][scanner.nextInt()];
+      for(int i = 0; i < B.length; i++) {
+         for(int j = 0; j < B[0].length; j++) {
+            B[i][j] = scanner.nextInt();
+         }
+      }
+      
+      int[][] C = matrixProduct(A, B);
    }
 
    public static int[][] matrixProduct(int[][] A, int[][] B) {
@@ -29,7 +38,7 @@ public class MatrixWork {
       int[][] C = new int[rows][cols];
      
       for (int i = 0; i < rows; i++) {
-         for (int j = 0; j < rows; j++) {
+         for (int j = 0; j < cols; j++) {
             for (int k = 0; k < A[0].length; k++) {
                C[i][j] += A[i][k] * B[k][j];
             }
@@ -40,6 +49,7 @@ public class MatrixWork {
    }
 
    private static void printM(int rows, int cols, int[][] C) {
+      System.out.println("\nProduct Matrix:");
       for (int x = 0; x < rows; x++) {
          for (int y = 0; y < cols; y++) {
             System.out.print(C[x][y] + " ");
