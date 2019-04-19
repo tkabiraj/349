@@ -25,14 +25,19 @@ public class MatrixWork {
             B[i][j] = scanner.nextInt();
          }
       }
-      
+     try { 
       int[][] C = matrixProduct(A, B);
+      printM(C.length, C[0].length, C);
+     }
+     catch(IllegalArgumentException e) {
+        System.out.println("# of A columns must be equal to # of B rows");
+     }
    }
 
    public static int[][] matrixProduct(int[][] A, int[][] B) {
-      if (A[0].length != B.length)
-         throw new IllegalArgumentException ("# of A columns must be equal to # of B rows");
-      
+      if (A[0].length != B.length) {
+         throw new IllegalArgumentException();
+      }
       int rows = A.length;
       int cols = B[0].length;
       int[][] C = new int[rows][cols];
@@ -44,7 +49,6 @@ public class MatrixWork {
             }
          }
       }
-      printM(rows, cols, C);
       return C;
    }
 
