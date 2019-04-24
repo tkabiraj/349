@@ -11,7 +11,7 @@ public class MatrixProduct {
    }
    
    private static int[][] DAC(int[][] A, int startRowA, int startColA, int[][] B, int startRowB, int startColB, int n) {
-      int[][] C = new int[A.length][A[0].length];
+      int[][] C = new int[n][n];
       
       if (n == 1)
          C[0][0] = A[startRowA][startColA] * B[startRowB][startColB];
@@ -43,8 +43,9 @@ public class MatrixProduct {
       int[][] C = new int[A.length][A[0].length];
       
       for (int i = 0; i < C.length; i++) {
-         for (int j = 0; j < C.length; j++)
+         for (int j = 0; j < C.length; j++) {
             C[i][j] = A[i][j] + B[i][j];
+         }
       }
 
       return C;
@@ -92,7 +93,7 @@ public class MatrixProduct {
    }
 
    private static int[][] Strassen(int[][] A, int startRowA, int startColA, int[][] B, int startRowB, int startColB, int n) {
-      int[][] C = new int[A.length][A[0].length];
+      int[][] C = new int[n][n];
       
       if (n == 1)
          C[0][0] = A[startRowA][startColA] * B[startRowB][startColB];
@@ -120,9 +121,7 @@ public class MatrixProduct {
          //int[][] C111 = addM(P5, P4);
          //int[][] C112 = addM(P2, P6);
          //int[][] C11 = subM(C111, C112);
-         int[][] C11 = subM (addM(P5, P4), addM(P2, P6));
-         System.out.println("Rows1: " + P1.length + ", Cols1: " + P1[0].length);
-         System.out.println("Rows2: " + P2.length + ", Cols2: " + P2[0].length);
+         int[][] C11 = addM (addM(P5, P4), subM(P6, P2));
          int[][] C12 = addM (P1, P2);
          int[][] C21 = addM (P3, P4);
          int[][] C22 = subM (subM (addM(P5, P1), P3), P7);
@@ -130,7 +129,7 @@ public class MatrixProduct {
          for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                C[i][j] = C11[i][j];
-               //C[i][j + n] = C12[i][j];
+               C[i][j + n] = C12[i][j];
                C[i + n][j] = C21[i][j];
                C[i + n][j + n] = C22[i][j];
             }

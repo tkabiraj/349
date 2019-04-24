@@ -27,9 +27,15 @@ public class runProducts {
          }
       }
       try { 
-         int[][] C = MatrixProduct.matrixProduct_Strassen(A, B);
+         int[][] C = MatrixProduct.matrixProduct_DAC(A, B);
+         System.out.println("DAC:");
          printM(C.length, C[0].length, C);
-     
+           
+         int[][] D = MatrixProduct.matrixProduct_Strassen(A, B);
+         System.out.println("Strassen:");
+         printM(D.length, D[0].length, D);
+          
+
       
      }
      catch(IllegalArgumentException e) {
