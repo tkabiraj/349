@@ -27,8 +27,10 @@ public class runProducts {
          }
       }
       try { 
-         int[][] C = MatrixProduct.matrixProduct_DAC(A, B);
+         int[][] C = MatrixProduct.matrixProduct_Strassen(A, B);
          printM(C.length, C[0].length, C);
+     
+      
      }
      catch(IllegalArgumentException e) {
         System.out.println("Does not satisfy input conditions.");
