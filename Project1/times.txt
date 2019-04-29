@@ -1,0 +1,38 @@
+//Marine Cossoul(mcossoul@calpoly.edu) Tania Kabiraj(tkabiraj@calpoly.edu)
+
+N = 5000: T_ss=38, T_ms=3, T_qs=3
+N = 5000: T_ss=32, T_ms=0, T_qs=0
+N = 5000: T_ss=19, T_ms=1, T_qs=0
+N = 5000: T_ss=31, T_ms=1, T_qs=0
+N = 5000: T_ss=31, T_ms=0, T_qs=0
+
+N = 10000: T_ss=125, T_ms=2, T_qs=1
+N = 10000: T_ss=125, T_ms=2, T_qs=1
+N = 10000: T_ss=125, T_ms=2, T_qs=1
+N = 10000: T_ss=125, T_ms=2, T_qs=1
+N = 10000: T_ss=67, T_ms=1, T_qs=1
+
+N = 20000: T_ss=250, T_ms=3, T_qs=2
+N = 20000: T_ss=226, T_ms=3, T_qs=2
+N = 20000: T_ss=225, T_ms=3, T_qs=2
+N = 20000: T_ss=226, T_ms=3, T_qs=2
+N = 20000: T_ss=235, T_ms=4, T_qs=2
+
+N = 40000: T_ss=976, T_ms=7, T_qs=5
+N = 40000: T_ss=913, T_ms=8, T_qs=5
+N = 40000: T_ss=1063, T_ms=9, T_qs=5
+N = 40000: T_ss=1056, T_ms=8, T_qs=5
+N = 40000: T_ss=901, T_ms=10, T_qs=6
+
+N = 80000: T_ss=3624, T_ms=17, T_qs=10
+N = 80000: T_ss=4447, T_ms=20, T_qs=12
+N = 80000: T_ss=4136, T_ms=20, T_qs=12
+N = 80000: T_ss=4373, T_ms=20, T_qs=12
+N = 80000: T_ss=3711, T_ms=16, T_qs=10
+
+N = 160000: T_ss=15643, T_ms=42, T_qs=24
+N = 160000: T_ss=15671, T_ms=35, T_qs=23
+N = 160000: T_ss=15612, T_ms=35, T_qs=23
+N = 160000: T_ss=16389, T_ms=35, T_qs=22
+N = 160000: T_ss=15582, T_ms=35, T_qs=22
+

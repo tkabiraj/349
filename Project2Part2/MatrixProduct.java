@@ -1,3 +1,6 @@
+//Marine Cossoul (mcossoul@calpoly.edu) Tania Kabiraj (tkabiraj@calpoly.edu)
+//Project 2, 4/24/19
+
 public class MatrixProduct {
 
    public static int[][] matrixProduct_DAC(int[][] A, int[][] B) {
@@ -118,9 +121,6 @@ public class MatrixProduct {
          int[][] P6 = Strassen(S7, 0, 0, S8, 0, 0, n);
          int[][] P7 = Strassen(S9, 0, 0, S10, 0, 0, n);
 
-         //int[][] C111 = addM(P5, P4);
-         //int[][] C112 = addM(P2, P6);
-         //int[][] C11 = subM(C111, C112);
          int[][] C11 = addM (addM(P5, P4), subM(P6, P2));
          int[][] C12 = addM (P1, P2);
          int[][] C21 = addM (P3, P4);

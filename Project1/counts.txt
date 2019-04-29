@@ -1,0 +1,10 @@
+//Marine Cossoul(mcossoul@calpoly.edu) Tania Kabiraj(tkabiraj@calpoly.edu)
+
+N=100: C_ss=4950, C_ms=542, C_qs=767
+N=200: C_ss=19900, C_ms=1280, C_qs=1764
+N=400: C_ss=79800, C_ms=2962, C_qs=4003
+N=800: C_ss=319600, C_ms=6724, C_qs=8959
+N=1600: C_ss=1279200, C_ms=15037, C_qs=19901
+N=3200: C_ss=5118400, C_ms=33278, C_qs=43517
+N=6400: C_ss=20476800, C_ms=72958, C_qs=94631
+N=12800: C_ss=81913600, C_ms=158706, C_qs=203964
