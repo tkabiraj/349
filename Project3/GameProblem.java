@@ -27,9 +27,9 @@ public class GameProblem {
       char[][] R = new char[n+1][m+1];
       int maxSum = A[n-1][m-1], maxI = 1, maxJ = 1;
 
-      for(int i = S.length - 2; i > 0; i --) {
-         for(int j = S[0].length - 2; j > 0; j--) {
-            if(A[i][j] + S[i + 1][j] >= S[i][j + 1]) {
+      for(int i = S.length - 2; i >= 0; i --) {
+         for(int j = S[0].length - 2; j >= 0; j--) {
+            if(S[i + 1][j] >= S[i][j + 1]) {
                S[i][j] = A[i][j] + S[i + 1][j];
                R[i][j] = 'd';
             }else{
@@ -42,6 +42,12 @@ public class GameProblem {
                maxJ = j;
             }
          }
+      }
+      for(int i = 0; i < S.length - 1; i++) {
+         for(int j = 0; j < S[0].length - 1; j++) {
+            System.out.print(S[i][j] + " ");
+         }
+         System.out.println();
       }
       System.out.println("Best score: " + maxSum);
       printRoute(R, maxI, maxJ);
