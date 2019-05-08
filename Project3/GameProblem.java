@@ -18,7 +18,13 @@ public class GameProblem {
    }
 
    public static void game(int n, int m, int[][] A) {
-      int[][] S = new int[n-1][m-1];
+      int[][] S = new int[n+1][m+1];
+
+      for(int i = 1; i < S.length; i ++) {
+         for(int j = 1; j < S[0].length; j++) {
+
+         }
+      }
 
    }
 }
