@@ -25,7 +25,7 @@ public class GameProblem {
    public static void game(int n, int m, int[][] A) {
       int[][] S = new int[n+1][m+1];
       char[][] R = new char[n+1][m+1];
-      int maxSum = A[n-1][m-1], maxI = 1, maxJ = 1;
+      int maxSum = A[n-1][m-1], maxI = n-1, maxJ = m-1;
 
       for(int i = S.length - 2; i >= 0; i --) {
          for(int j = S[0].length - 2; j >= 0; j--) {
