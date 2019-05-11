@@ -1,3 +1,6 @@
+//Marine Cossoul (mcossoul@calpoly.edu) Tania Kabiraj (tkabiraj@calpoly.edu)
+//Project 3, 5/10/19
+
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
