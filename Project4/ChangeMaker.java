@@ -20,7 +20,7 @@ public class ChangeMaker {
       
    }
    private static void printB(int[] B, int n, int[] d) {
-      System.out.println("DP algorithms results");
+      System.out.println("\nDP algorithms results");
       System.out.println("Amount: " + n);
       System.out.println("Optimal distribution: ");
 
@@ -29,15 +29,15 @@ public class ChangeMaker {
       for (int i = 0; i < d.length; i++) {
          if (B[i] > 0) {
             sum += B[i] * d[i];
+            count += B[i];
             if (sum == n) {
                System.out.println(B[i] + "*" + d[i] + "c");
                break;
             }
             System.out.print(B[i] + "*" + d[i] + "c + ");
-            count += B[i];
          }
       }
-      System.out.println("\nOptimal coin count: " + count);
+      System.out.println("Optimal coin count: " + count + "\n");
    }
    public static int[] change_DP(int n, int[] d) {
       int[] C = new int[n+1];
@@ -48,7 +48,7 @@ public class ChangeMaker {
       for (int j = 1; j <= n; j++) {
          minCoins = n;
          for (int i = 0; i < d.length; i++) {
-            if (d[i] < j) {
+            if (d[i] <= j) {
                if (C[j-d[i]] < minCoins) {
                   minCoins = C[j-d[i]];
                   A[j] = i;
