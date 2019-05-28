@@ -21,16 +21,16 @@ public class DiGraphTest {
       while((n = scanner.next().charAt(0)) != 'q') {
          switch (n) {
             case 'a':
-               System.out.println("Add edge from where to where?");
                from = scanner.nextInt();
                to =  scanner.nextInt();
                graph.addEdge(from, to);
+               System.out.println("Edge (" + from + ", " + to + ") successfully added");
                break;
             case 'd':
-               System.out.println("Remove edge from where to where?");
                from = scanner.nextInt();
                to =  scanner.nextInt();
                graph.deleteEdge(from, to);
+               System.out.println("Edge (" + from + ", " + to + ") successfully removed");
                break;
             case 'e':
                System.out.println("Number of edges: " + graph.edgeCount());
@@ -48,5 +48,6 @@ public class DiGraphTest {
          }
          System.out.println("\nChoose an operation");
       }
+   System.out.println("Good bye.");
    }
 }
