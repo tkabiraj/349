@@ -47,16 +47,36 @@ public class DiGraph {
       }
    }
 
-   private int[] indegrees() {
+   private static int[] indegrees() {
       int[] indegree = new int[lists.length];
       for (int i = 0; i < lists.length; i++) {
-         for (int j = 0; j < list[i].size(); j++)
+         for (int j = 0; j < lists[i].size(); j++)
             indegree[lists[i].get(j) - 1]++;
       }
       return indegree;
    }
 
    public static int[] topSort() {
-      
+      int[] indegree = indegrees();
+      LinkedList<Integer> Q = new LinkedList<>();
+      int[] A = new int[lists.length];
+
+      for (int i = 0; i < indegree.length; i++) {
+         if (indegree[i] == 0)
+            Q.addLast(i + 1);
+      }
+
+      int i = 0;
+      while(Q.size() != 0) {
+         int u = Q.removeFirst();
+         A[i] = u;
+         i++;
+         for(int j = 0; j < lists[u].size(); j++) {
+            indegree[lists[u].get(j) - 1]--;
+            if(indegree[lists[u].get(j) - 1] == 0)
+               Q.addLast(indegree[lists[u].get(j) - 1]);
+         }
+      }
+      return A;
    }
 }
