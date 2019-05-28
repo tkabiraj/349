@@ -15,6 +15,7 @@ public class DiGraphTest {
       System.out.println("-edge count (enter e)");
       System.out.println("-vertex count (enter v)");
       System.out.println("-print graph (enter p)");
+      System.out.println("-print topological sort (enter t)");
       System.out.println("-Quit (enter q)");
       System.out.println();
 
@@ -41,6 +42,13 @@ public class DiGraphTest {
             case 'p':
                System.out.println();
                graph.print();
+               break;
+            case 't':
+               System.out.print("Topological Sort: ");
+               int[] A = graph.topSort();
+               for(int i = 0; i < A.length - 1; i++) 
+                  System.out.print(A[i] + ", ");
+               System.out.println(A[A.length - 1]);
                break;
             default:
                System.out.println("Must be a valid operation");
