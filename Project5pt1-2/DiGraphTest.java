@@ -19,7 +19,11 @@ public class DiGraphTest {
       System.out.println("-Quit (enter q)");
       System.out.println();
 
-      while((n = scanner.next().charAt(0)) != 'q') {
+      while ((n = scanner.next().charAt(0)) != 'q') {
+         /*if (in.length() > 1) {
+            System.out.println("Must be a valid operation");
+            break;
+         }*/
          switch (n) {
             case 'a':
                from = scanner.nextInt();
