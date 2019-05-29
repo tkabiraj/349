@@ -52,16 +52,15 @@ public class DiGraphTest {
                break;
             case "t":
                System.out.print("Topological Sort: ");
-               int[] A = graph.topSort();
-               boolean cyclic = false;
-               for(int i = 0; i < A.length - 1; i++) {
-                  if(A[i] == 0)
-                     cyclic = true;
-                  System.out.print(A[i] + ", ");
+               try {
+                  int[] A = graph.topSort();
+                  for(int i = 0; i < A.length - 1; i++)
+                     System.out.print(A[i] + ", ");
+                  System.out.println(A[A.length - 1]);
                }
-               System.out.println(A[A.length - 1]);
-               if(cyclic)
+               catch(IllegalArgumentException e) {
                   System.out.println("The graph is cyclic");
+               }
                break;
             default:
                System.out.println("Must be a valid operation");

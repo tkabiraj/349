@@ -37,6 +37,7 @@ public class DiGraph {
    }
 
    public static void print() {
+      System.out.println("The graph is the following: ");
       for (int i = 0; i < lists.length; i++) {
          System.out.print((i + 1) + " is connected to: " );
          for (int j = 0; j < lists[i].size() - 1; j++) 
@@ -81,6 +82,8 @@ public class DiGraph {
             }
          }
       }
+      if (i < lists.length)
+         throw new IllegalArgumentException();
       return A;
    }
 }
