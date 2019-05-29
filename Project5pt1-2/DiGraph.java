@@ -70,15 +70,12 @@ public class DiGraph {
       int i = 0;
      
       while(Q.size() != 0) {
-         System.out.println("Q.size: " + Q.size());
          int u = Q.removeFirst();
          A[i] = u;
          i++;
-         System.out.println("u: " + u);
          for(int j = 0; j < lists[u-1].size(); j++) {
             indegree[lists[u-1].get(j) - 1] = indegree[lists[u-1].get(j) - 1] - 1;
             temp = indegree[lists[u-1].get(j) - 1];
-            System.out.println("current indegree: " + temp);
             if(temp == 0) {
                Q.addLast(lists[u-1].get(j));
             }

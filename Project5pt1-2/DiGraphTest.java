@@ -7,6 +7,7 @@ public class DiGraphTest {
       System.out.println("Input number of vertices");
       int vertices  = scanner.nextInt();
       int n, from, to;
+      String N;
 
       DiGraph graph = new DiGraph(vertices);
       System.out.println("\nChoose one of the following operations:");
@@ -19,40 +20,48 @@ public class DiGraphTest {
       System.out.println("-Quit (enter q)");
       System.out.println();
 
-      while ((n = scanner.next().charAt(0)) != 'q') {
-         /*if (in.length() > 1) {
-            System.out.println("Must be a valid operation");
+      N = scanner.nextLine();
+      while (scanner.hasNext()) {
+         N = scanner.nextLine();
+         if (N.charAt(0) == 'q')
             break;
-         }*/
-         switch (n) {
-            case 'a':
+         switch (N) {
+            case "a":
                from = scanner.nextInt();
                to =  scanner.nextInt();
                graph.addEdge(from, to);
                System.out.println("Edge (" + from + ", " + to + ") successfully added");
+               N = scanner.nextLine(); 
                break;
-            case 'd':
+            case "d":
                from = scanner.nextInt();
                to =  scanner.nextInt();
                graph.deleteEdge(from, to);
                System.out.println("Edge (" + from + ", " + to + ") successfully removed");
+               N = scanner.nextLine();
                break;
-            case 'e':
+            case "e":
                System.out.println("Number of edges: " + graph.edgeCount());
                break;
-            case 'v':
+            case "v":
                System.out.println("Number of vertices: " + graph.vertexCount());
                break;
-            case 'p':
+            case "p":
                System.out.println();
                graph.print();
                break;
-            case 't':
+            case "t":
                System.out.print("Topological Sort: ");
                int[] A = graph.topSort();
-               for(int i = 0; i < A.length - 1; i++) 
+               boolean cyclic = false;
+               for(int i = 0; i < A.length - 1; i++) {
+                  if(A[i] == 0)
+                     cyclic = true;
                   System.out.print(A[i] + ", ");
+               }
                System.out.println(A[A.length - 1]);
+               if(cyclic)
+                  System.out.println("The graph is cyclic");
                break;
             default:
                System.out.println("Must be a valid operation");
