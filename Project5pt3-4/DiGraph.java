@@ -159,7 +159,7 @@ public class DiGraph {
       while (Q.size() != 0) {
          curr = Q.removeFirst();
          for (int i = 0; i < VA.length; i++) {
-            if (VA[i].parent == curr.vertex) {
+            if (VA[i].parent == curr.vertex - 1) {
                TreeNode child = new TreeNode();
                child.vertex = i + 1;
                child.children = new LinkedList<TreeNode>();
@@ -175,15 +175,15 @@ public class DiGraph {
 
    public void printTree(int s) {
       TreeNode root = buildTree(s);
-      printTree(root, 0);
+      printTree(root, 1);
    }
 
    private void printTree(TreeNode root, int t) {
+      System.out.println(root.vertex);
       for(int i = 0; i < root.children.size(); i++) {
-         System.out.println(root.vertex);
          for(int j = 0; j < t; j++)
-            System.out.print("\t");
-         printTree(root.children.get(i + 1), t+1);
+            System.out.print("    ");
+         printTree(root.children.get(i), t+1);
       }
    }
 
